@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Информация об авторе учебного магазина и ссылка на форму заявки.">
+    <title>Контакты – Учебный магазин</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body id="top">
+    <header class="site-header"><div class="site-header__inner">
+        <a class="site-header__logo" href="index.html">Учебный магазин</a>
+        <nav class="site-nav" aria-label="Основная навигация"><ul class="site-nav__list"><li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li><li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li><li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li><li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li><li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contacts.html" aria-current="page">Контакты</a></li></ul></nav>
+    </div></header>
+    <main class="page"><section class="section"><h1>Контакты</h1><p>Автор: Базырцыренов Кирилл Булатович.</p><p>Группа: ЭФБО-07-25.</p><p>Дисциплина: «Фронтенд и бэкенд разработка».</p><p><a href="https://github.com/BazKirBul/lasbs13">Репозиторий проекта на GitHub</a></p><p>Для демонстрации обратной связи используется форма заявки. Адрес, телефон и электронная почта магазина не указаны: это учебный проект.</p><a class="button button--primary" href="order.html">Перейти к форме заявки</a></section></main>
+    <footer class="site-footer"><div class="site-footer__inner"><p>Учебный проект по дисциплине «Фронтенд и бэкенд разработка».</p><p>Базырцыренов Кирилл Булатович · ЭФБО-07-25 · 2026</p></div></footer>
+    <a class="back-to-top" href="#top" aria-label="Вернуться наверх">Наверх ↑</a>
+    <dialog class="order-dialog" id="order-dialog" aria-labelledby="dialog-title">
+        <button class="button button--secondary order-dialog__close" type="button" id="close-dialog">Закрыть</button>
+        <h2 id="dialog-title">Заявка на товар</h2><form class="order-form" data-order-form>
+        <p id="dialog-hint">Поля со знаком * обязательны. Это учебная форма: данные не отправляются на сервер.</p>
+        <div class="order-form__field"><label class="order-form__label" for="dialog-name">Имя *</label><input class="order-form__input" id="dialog-name" name="name" autocomplete="name" required minlength="2" aria-describedby="dialog-hint"></div>
+        <div class="order-form__field"><label class="order-form__label" for="dialog-email">E-mail *</label><input class="order-form__input" id="dialog-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="order-form__field"><label class="order-form__label" for="dialog-phone">Телефон *</label><input class="order-form__input" id="dialog-phone" name="phone" type="tel" autocomplete="tel" required pattern="[0-9\s\+\(\)\-]{7,20}" aria-describedby="dialog-phone-hint"><small id="dialog-phone-hint">От 7 до 20 символов: цифры, пробелы, +, скобки и дефисы.</small></div>
+        <div class="order-form__field"><label class="order-form__label" for="dialog-product">Выбранный товар *</label><select class="order-form__input" id="dialog-product" name="product" required><option value="">Выберите товар</option><option>Товар 1</option><option>Товар 2</option><option>Товар 3</option></select></div>
+        <div class="order-form__field"><label class="order-form__label" for="dialog-comment">Комментарий</label><textarea class="order-form__input" id="dialog-comment" name="comment" rows="3"></textarea></div>
+        <div class="order-form__field"><input id="dialog-consent" name="consent" type="checkbox" required><label for="dialog-consent">Согласен на обработку введённых данных *</label></div>
+        <div class="order-form__actions"><button class="button button--primary" type="submit">Отправить заявку</button><button class="button button--secondary" type="reset">Очистить</button></div>
+        <p class="order-form__message" role="status" hidden>Проверка пройдена. Демонстрационная заявка заполнена; данные не отправлены и не сохранены.</p>
+    </form>
+    </dialog>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Главная страница учебного магазина: преимущества и популярные товары.">
+    <title>Главная – Учебный магазин</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body id="top">
+    <header class="site-header"><div class="site-header__inner">
+        <a class="site-header__logo" href="index.html">Учебный магазин</a>
+        <nav class="site-nav" aria-label="Основная навигация"><ul class="site-nav__list"><li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a></li><li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li><li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li><li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li><li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li></ul></nav>
+    </div></header>
+    <main class="page"><section class="hero"><h1>Учебный интернет-магазин</h1><p>Многостраничный каталог с карточками товаров и формой заявки. Все товары, цены и сведения о наличии демонстрационные.</p><a class="button button--primary" href="catalog.html">Открыть каталог</a><nav class="hero__links" aria-label="Разделы главной страницы"><a href="#advantages">Преимущества</a><a href="#popular">Популярные товары</a><a href="#contacts">Контакты</a></nav></section>
+    <section class="section" id="advantages"><h2>Преимущества каталога</h2><ul><li>Три товара с описаниями и ценами.</li><li>Характеристики доступны на отдельной странице.</li><li>Заявку можно заполнить на странице или в модальном окне.</li></ul></section>
+    <section class="section" id="popular"><h2>Популярные товары</h2><div class="products-grid"><article class="product-card product-card--featured">
+            <span class="product-card__badge">Хит</span>
+            <img class="product-card__image" src="images/product-1.svg" alt="Учебная иллюстрация товара 1" width="320" height="220">
+            <h3 class="product-card__title">Товар 1</h3>
+            <p class="product-card__description">Учебный товар для демонстрации каталога и оформления заявки.</p>
+            <p class="product-card__price">1000 руб.</p>
+            <div class="product-card__actions"><a class="button button--secondary" href="product.html#product-1">Подробнее</a><button class="button button--primary" type="button" data-order="Товар 1">Оставить заявку</button></div>
+        </article><article class="product-card product-card--discount">
+            <span class="product-card__badge">Скидка</span>
+            <img class="product-card__image" src="images/product-2.svg" alt="Учебная иллюстрация товара 2" width="320" height="220">
+            <h3 class="product-card__title">Товар 2</h3>
+            <p class="product-card__description">Учебный товар для демонстрации каталога и оформления заявки.</p>
+            <p class="product-card__price">1500 руб.</p>
+            <div class="product-card__actions"><a class="button button--secondary" href="product.html#product-2">Подробнее</a><button class="button button--primary" type="button" data-order="Товар 2">Оставить заявку</button></div>
+        </article><article class="product-card product-card--unavailable">
+            <span class="product-card__badge">Нет в наличии</span>
+            <img class="product-card__image" src="images/product-3.svg" alt="Учебная иллюстрация товара 3" width="320" height="220">
+            <h3 class="product-card__title">Товар 3</h3>
+            <p class="product-card__description">Учебный товар для демонстрации каталога и оформления заявки.</p>
+            <p class="product-card__price">2000 руб.</p>
+            <div class="product-card__actions"><a class="button button--secondary" href="product.html#product-3">Подробнее</a><button class="button button--primary" type="button" disabled>Недоступно</button></div>
+        </article></div></section>
+    <section class="section faq" id="faq"><h2>Часто задаваемые вопросы</h2><details class="faq__item"><summary class="faq__question">Как оставить заявку?</summary><p>Откройте страницу «Заявка» или нажмите «Оставить заявку» у доступного товара. Заполните обязательные поля.</p></details><details class="faq__item"><summary class="faq__question">Отправляются ли данные?</summary><p>Нет. Проект демонстрирует форму и проверку полей браузером. Сервер и обработка заказов не подключены.</p></details><details class="faq__item"><summary class="faq__question">Работают ли фильтры каталога?</summary><p>Фильтры представлены статической HTML-разметкой. Отбор товаров будет задачей последующей работы по JavaScript.</p></details></section>
+    <section class="section" id="contacts"><h2>Контакты</h2><p>Автор проекта: Базырцыренов Кирилл Булатович, ЭФБО-07-25.</p><a href="contacts.html">Контактная информация</a></section></main>
+    <footer class="site-footer"><div class="site-footer__inner"><p>Учебный проект по дисциплине «Фронтенд и бэкенд разработка».</p><p>Базырцыренов Кирилл Булатович · ЭФБО-07-25 · 2026</p></div></footer>
+    <a class="back-to-top" href="#top" aria-label="Вернуться наверх">Наверх ↑</a>
+    <dialog class="order-dialog" id="order-dialog" aria-labelledby="dialog-title">
+        <button class="button button--secondary order-dialog__close" type="button" id="close-dialog">Закрыть</button>
+        <h2 id="dialog-title">Заявка на товар</h2><form class="order-form" data-order-form>
+        <p id="dialog-hint">Поля со знаком * обязательны. Это учебная форма: данные не отправляются на сервер.</p>
+        <div class="order-form__field"><label class="order-form__label" for="dialog-name">Имя *</label><input class="order-form__input" id="dialog-name" name="name" autocomplete="name" required minlength="2" aria-describedby="dialog-hint"></div>
+        <div class="order-form__field"><label class="order-form__label" for="dialog-email">E-mail *</label><input class="order-form__input" id="dialog-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="order-form__field"><label class="order-form__label" for="dialog-phone">Телефон *</label><input class="order-form__input" id="dialog-phone" name="phone" type="tel" autocomplete="tel" required pattern="[0-9\s\+\(\)\-]{7,20}" aria-describedby="dialog-phone-hint"><small id="dialog-phone-hint">От 7 до 20 символов: цифры, пробелы, +, скобки и дефисы.</small></div>
+        <div class="order-form__field"><label class="order-form__label" for="dialog-product">Выбранный товар *</label><select class="order-form__input" id="dialog-product" name="product" required><option value="">Выберите товар</option><option>Товар 1</option><option>Товар 2</option><option>Товар 3</option></select></div>
+        <div class="order-form__field"><label class="order-form__label" for="dialog-comment">Комментарий</label><textarea class="order-form__input" id="dialog-comment" name="comment" rows="3"></textarea></div>
+        <div class="order-form__field"><input id="dialog-consent" name="consent" type="checkbox" required><label for="dialog-consent">Согласен на обработку введённых данных *</label></div>
+        <div class="order-form__actions"><button class="button button--primary" type="submit">Отправить заявку</button><button class="button button--secondary" type="reset">Очистить</button></div>
+        <p class="order-form__message" role="status" hidden>Проверка пройдена. Демонстрационная заявка заполнена; данные не отправлены и не сохранены.</p>
+    </form>
+    </dialog>
+</body>
+</html>
