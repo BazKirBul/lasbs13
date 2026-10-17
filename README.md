@@ -6,7 +6,7 @@
 
 ## Структура проекта
 
-```text
+
 lasbs13/
 ├── index.html
 ├── catalog.html
