@@ -6,23 +6,17 @@
 
 ## Структура проекта
 
-
-lasbs13/
-├── index.html
-├── catalog.html
-├── product.html
-├── order.html
-├── contacts.html
-├── css/
-│   └── style.css
-├── js/
-│   └── main.js
-├── images/
-│   ├── product-1.svg
-│   ├── product-2.svg
-│   └── product-3.svg
-├── README.md
-└── .gitignore
+-  index.html – главная страница;
+-  catalog.html – каталог товаров;
+-  category.html – страница категории «Книги»;
+-  about.html – о проекте;
+-  delivery.html – доставка и оплата;
+-  contacts.html – контактная информация;
+-  css/style.css – файл стилей;
+-  js/main.js – файл JavaScript;
+-  images/ – папка для изображений;
+-  README.md – описание проекта;
+-  .gitignore – список файлов, исключённых из Git.
 
 ## Используемые технологии
 HTML5, CSS3, минимальный JavaScript, Git и GitHub. CSS-фреймворки и сторонние библиотеки не используются.
