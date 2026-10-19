@@ -14,6 +14,7 @@
         <nav class="site-nav" aria-label="Основная навигация"><ul class="site-nav__list"><li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li><li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li><li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li><li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="order.html" aria-current="page">Заявка</a></li><li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li></ul></nav>
     </div></header>
     <main class="page"><section class="section order"><h1>Оформление заявки</h1><p>Заполните форму и проверьте введённые данные. Реальный заказ не создаётся.</p><form class="order-form" data-order-form>
+        <p class="order-form__error" id="page-error" role="alert" hidden>Проверьте выделенные поля: заполните обязательные данные в указанном формате.</p>
         <p id="page-hint">Поля со знаком * обязательны. Это учебная форма: данные не отправляются на сервер.</p>
         <div class="order-form__field"><label class="order-form__label" for="page-name">Имя *</label><input class="order-form__input" id="page-name" name="name" autocomplete="name" required minlength="2" aria-describedby="page-hint"></div>
         <div class="order-form__field"><label class="order-form__label" for="page-email">E-mail *</label><input class="order-form__input" id="page-email" name="email" type="email" autocomplete="email" required></div>
@@ -24,12 +25,14 @@
         <div class="order-form__field"><label class="order-form__label" for="page-comment">Комментарий</label><textarea class="order-form__input" id="page-comment" name="comment" rows="3"></textarea></div>
         <div class="order-form__field"><input id="page-consent" name="consent" type="checkbox" required><label for="page-consent">Согласен на обработку введённых данных *</label></div>
         <div class="order-form__actions"><button class="button button--primary" type="submit">Отправить заявку</button><button class="button button--secondary" type="reset">Очистить</button></div>
-        <p class="order-form__message" role="status" hidden>Проверка пройдена. Демонстрационная заявка заполнена; данные не отправлены и не сохранены.</p>
+        <p class="order-form__message" role="status" tabindex="-1" hidden>Проверка пройдена. Демонстрационная заявка заполнена; данные не отправлены и не сохранены.</p>
     </form></section></main>
     <footer class="site-footer"><div class="site-footer__inner"><p>Учебный проект по дисциплине «Фронтенд и бэкенд разработка».</p><p>Базырцыренов Кирилл Булатович · ЭФБО-07-25 · 2026</p></div></footer>
-    <dialog class="order-dialog" id="order-dialog" aria-labelledby="dialog-title">
-        <button class="button button--secondary order-dialog__close" type="button" id="close-dialog">Закрыть</button>
-        <h2 id="dialog-title">Заявка на товар</h2><form class="order-form" data-order-form>
+    <a class="back-to-top" href="#top" aria-label="Вернуться к началу страницы">Наверх ↑</a>
+    <dialog class="order-dialog" id="order-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-hint dialog-selection">
+        <div class="order-dialog__header"><h2 id="dialog-title">Заявка на товар</h2><button class="button button--secondary order-dialog__close" type="button" id="close-dialog" aria-label="Закрыть окно заявки">Закрыть ×</button></div>
+        <p class="order-dialog__selection" id="dialog-selection">Выберите товар в форме ниже.</p><form class="order-form" data-order-form>
+        <p class="order-form__error" id="dialog-error" role="alert" hidden>Проверьте выделенные поля: заполните обязательные данные в указанном формате.</p>
         <p id="dialog-hint">Поля со знаком * обязательны. Это учебная форма: данные не отправляются на сервер.</p>
         <div class="order-form__field"><label class="order-form__label" for="dialog-name">Имя *</label><input class="order-form__input" id="dialog-name" name="name" autocomplete="name" required minlength="2" aria-describedby="dialog-hint"></div>
         <div class="order-form__field"><label class="order-form__label" for="dialog-email">E-mail *</label><input class="order-form__input" id="dialog-email" name="email" type="email" autocomplete="email" required></div>
@@ -40,7 +43,7 @@
         <div class="order-form__field"><label class="order-form__label" for="dialog-comment">Комментарий</label><textarea class="order-form__input" id="dialog-comment" name="comment" rows="3"></textarea></div>
         <div class="order-form__field"><input id="dialog-consent" name="consent" type="checkbox" required><label for="dialog-consent">Согласен на обработку введённых данных *</label></div>
         <div class="order-form__actions"><button class="button button--primary" type="submit">Отправить заявку</button><button class="button button--secondary" type="reset">Очистить</button></div>
-        <p class="order-form__message" role="status" hidden>Проверка пройдена. Демонстрационная заявка заполнена; данные не отправлены и не сохранены.</p>
+        <p class="order-form__message" role="status" tabindex="-1" hidden>Проверка пройдена. Демонстрационная заявка заполнена; данные не отправлены и не сохранены.</p>
     </form>
     </dialog>
 </body>
