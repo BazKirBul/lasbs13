@@ -1,5 +1,5 @@
 const dialog = document.getElementById('order-dialog');
-const prices = { 'Товар 1': '1000 руб.', 'Товар 2': '1500 руб.' };
+const prices = { 'Ножовка по дереву': '1000 руб.', 'Аккумуляторный шуруповёрт': '1500 руб.' };
 let dialogOpener = null;
 
 function updateSelection() {

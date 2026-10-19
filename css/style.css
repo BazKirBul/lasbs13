@@ -138,3 +138,7 @@ img { display: block; max-width: 100%; height: auto; }
     .product-detail__image { margin: auto; }
     [id] { scroll-margin-top: var(--space-md); }
 }
+
+/* Product photos supplied for the educational catalog. */
+.product-card__image { height: 220px; object-fit: contain; background: #fff; }
+.product-detail__image { width: 100%; height: 280px; object-fit: contain; background: #fff; }
