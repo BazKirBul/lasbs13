@@ -53,10 +53,12 @@ img { display: block; max-width: 100%; height: auto; }
 .product-card__title, .product-card__description, .product-card__price { margin: 0; }
 .product-card__description { color: var(--color-muted); }
 .product-card__price, .product-detail__price { font-weight: 700; }
+.product-card__old-price { color: var(--color-muted); font-size: 14px; font-weight: 400; }
 .product-card__actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: auto; padding-top: var(--space-sm); }
 .breadcrumbs { margin-bottom: var(--space-lg); }
 .catalog-layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); align-items: start; gap: var(--space-lg); }
-.catalog-filters { position: sticky; top: 140px; padding: var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-surface); }
+.catalog-products .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.catalog-filters { position: sticky; top: 140px; max-height: calc(100dvh - 156px); overflow-y: auto; padding: var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-surface); }
 .catalog-filters h2 { margin-top: 0; }
 .catalog-filters__note { font-size: 14px; color: var(--color-muted); }
 .filters-form { display: grid; gap: var(--space-md); }
@@ -83,14 +85,13 @@ img { display: block; max-width: 100%; height: auto; }
 .order-dialog__close { display: block; margin-left: auto; }
 .faq__item { padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border); }
 .faq__question { cursor: pointer; font-weight: 700; }
-.site-footer { padding-bottom: 60px; background: var(--color-surface); border-top: 1px solid var(--color-border); }
-.back-to-top { position: fixed; bottom: var(--space-md); right: var(--space-md); z-index: 15; padding: var(--space-sm) var(--space-md); color: var(--color-bg); background: var(--color-primary); border-radius: var(--radius); text-decoration: none; }
-.back-to-top:hover { color: var(--color-bg); background: var(--color-primary-dark); }
+.site-footer { background: var(--color-surface); border-top: 1px solid var(--color-border); }
 @media (max-width: 950px) {
     .catalog-layout .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 700px) {
     .site-header, .catalog-filters { position: static; }
+    .catalog-filters { max-height: none; overflow-y: visible; }
     .products-grid, .catalog-layout, .catalog-layout .products-grid, .product-detail { grid-template-columns: 1fr; }
     .page { padding: var(--space-md); }
     .product-detail__image { margin: auto; }
