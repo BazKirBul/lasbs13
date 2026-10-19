@@ -69,3 +69,18 @@ document.querySelectorAll('[data-order-form]').forEach((form) => {
         error.hidden = form.querySelector('[aria-invalid="true"]') === null;
     });
 });
+
+
+// Keep filters and anchor links below the actual header at every screen size.
+const siteHeader = document.querySelector('.site-header');
+if (siteHeader) {
+    const updateHeaderHeight = () => {
+        document.documentElement.style.setProperty('--header-height', `${Math.ceil(siteHeader.getBoundingClientRect().height)}px`);
+    };
+    updateHeaderHeight();
+    if ('ResizeObserver' in window) {
+        new ResizeObserver(updateHeaderHeight).observe(siteHeader);
+    } else {
+        window.addEventListener('resize', updateHeaderHeight);
+    }
+}
