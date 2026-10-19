@@ -90,8 +90,19 @@ img { display: block; max-width: 100%; height: auto; }
     .catalog-layout .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 700px) {
-    .site-header, .catalog-filters { position: static; }
-    .catalog-filters { max-height: none; overflow-y: visible; }
+    .site-header { position: static; }
+    /* A block container lets the filter stick throughout the entire catalog. */
+    .catalog-layout { display: block; }
+    .catalog-filters {
+        position: sticky;
+        top: var(--space-sm);
+        z-index: 9;
+        max-height: 40vh;
+        max-height: 40dvh;
+        overflow-y: auto;
+        margin-bottom: var(--space-lg);
+        box-shadow: 0 4px 12px rgb(0 0 0 / .12);
+    }
     .products-grid, .catalog-layout, .catalog-layout .products-grid, .product-detail { grid-template-columns: 1fr; }
     .page { padding: var(--space-md); }
     .product-detail__image { margin: auto; }
